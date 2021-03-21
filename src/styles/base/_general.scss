@@ -1,6 +1,111 @@
+@import "src/styles/helpers/variables";
+
 h1, h2, h3, h4, h5, h6, ul {
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: 'Lato-Regular', 'Arial', sans-serif;
+    min-width: 320px;
+}
+
+h1, h2, h3 {
+    font-family: 'Lato-Semibold', 'Arial', sans-serif;
+}
+
+
+h1 {
+    color: $text-color;
+    font-size: 40px;
+    line-height: 59px;
+    font-weight: 700;
+
+    @media (max-width: $sm) {
+        font-size: 30px;
+    }
+
+    @media (max-width: $md) {
+        font-size: 38px;
+        line-height: 49px;
+    }
+}
+
+h2 {
+    color: $text-color;
+    font-size: 36px;
+
+    @media (max-width: $sm) {
+        font-size: 24px;
+    }
+
+    @media (max-width: $md) {
+        font-size: 30px;
+        line-height: 49px;
+    }
+}
+
+h3 {
+    color: $text-color;
+    font-size: 24px;
+
+    @media (max-width: $sm) {
+        font-size: 18px;
+    }
+}
+
+.sub-heading {
+    @media (max-width: $bp767) {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    color: $text-color;
+    font-size: 21px;
+    line-height: 28px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.sub-heading.invert {
+    @media (max-width: $bp767) {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    color: #ffffff;
+    font-size: 21px;
+    line-height: 28px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.flex-row {
+    display: flex;
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    color: $primaryColorBlue;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 22px;
+    transition: all 0.3s ease-in-out;
+    &::after {
+        content: "\2192";
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        font-size: 14px;
+        line-height: 6px;
+        transition: margin 0.3s ease-in-out;
+    }
+    &:hover {
+        color: #ffb400;
+
+        &::after {
+            margin-left: 15px;
+        }
+    }
 }
 
 .container {

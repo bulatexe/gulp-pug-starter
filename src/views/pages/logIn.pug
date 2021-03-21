@@ -1,0 +1,12 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = "DataSunrise Log In";
+
+block content
+	section.auth-page
+		+auth("LogIn")
+
+block scripts
+	script(src="../../js/auth.js")

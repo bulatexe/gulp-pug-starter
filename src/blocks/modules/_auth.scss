@@ -1,0 +1,48 @@
+$paddingOffset: 40px;
+
+.auth-page {
+  background-color: $primaryColorDark;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.auth {
+  background-color: #ffffff;
+  padding: 60px $paddingOffset;
+  width: calc(394px - #{$paddingOffset * 2});
+  border-radius: 3px;
+
+  &__form {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    .label {
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  button.submit {
+    margin-top: 18px;
+  }
+
+  &__visibility-pass {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    cursor: pointer;
+  }
+
+  &__logo {
+    margin-bottom: 60px;
+    text-align: center;
+    use {
+        fill: #ffb400;
+        color: #0084f4;
+    }
+  }
+}

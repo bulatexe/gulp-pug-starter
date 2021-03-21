@@ -1,0 +1,105 @@
+//- authTypes 1. LogIn 2. Signup 
+mixin auth(authType)
+  .auth
+    .auth__logo
+      svg(xmlns='http://www.w3.org/2000/svg', width='157', height='36', viewbox='0 0 157 36')
+        use(href='img/sprites/sprite.svg#logo-small')
+    form.auth__form
+        label.label(for='login') Login
+          input.input(id='login' required)
+        label.label(for='password') Password
+          input.input.password(id='password' type='password' required)
+          .auth__visibility-pass
+            svg(xmlns='http://www.w3.org/2000/svg', width="17" height="12" viewBox="0 0 17 12")
+              use(href='img/sprites/sprite.svg#ic_visibility')
+        if authType === 'LogIn'
+          button.btn-blue.submit(type='submit') Log In
+        else if authType === 'Signup'
+          button.btn-blue.submit(type='submit') Sign Up
+
+mixin header(classes)
+        header.header(class=classes)
+            .header__inner
+                .container
+                    .row
+                        .header__logo
+                            a(href='#')
+                                svg(xmlns='http://www.w3.org/2000/svg', width='157', height='36', viewbox='0 0 157 36')
+                                    use(href='img/sprites/sprite.svg#logo-small')
+                        include ../../blocks/modules/main-nav/main-nav
+
+
+mixin blockInnerItems(items)
+    .block-inner-items
+        .row
+          each item in items
+              .block-inner-item
+                  h3= item.title
+                  p= item.description
+                  div!= item.elem
+        .block-inner-items__new 
+          .block-inner-items__inner
+            span.decoration new
+            p We have updated our documentation, we added a new <a href='#'>название фичи или статьи</a>. Check it out!
+
+mixin supportedItems(title, items)
+    .support-items
+        .container
+          h2!= title
+          .row
+              each item in items
+                  .support-item
+                      a(href= item.link class='support-item__link ' + item.type)
+                          h2= item.title
+
+
+mixin contentItems(title, items)
+  .contents
+    .container
+      .flex-row 
+        h2!= title
+        a.text-link(href="#") See All
+      .row
+        each item in items
+          a.contents__item(style=`background-image: url(${item.img})` href="#")
+
+mixin contactUsPromo()
+    .container
+        .contact-us-promo
+            h2.invert Want to Know More?
+            p.sub-heading.invert Our experts will be glad to answer your questions.
+            .btn.btn-lg Contact Us
+
+mixin social()
+  .social
+    .social__list
+        a.social__link(href="#")
+            svg(width='9', height='16', viewbox='0 0 9 16', fill='none', xmlns='http://www.w3.org/2000/svg')
+                use(href='img/sprites/sprite.svg#facebook-logo')
+        a.social__link(href="#")
+            svg(width='17', height='16', viewbox='0 0 17 16', fill='none', xmlns='http://www.w3.org/2000/svg')
+                use(href='img/sprites/sprite.svg#linkedln')
+        a.social__link(href="#")
+            svg(width='16', height='14', viewbox='0 0 16 14', fill='none', xmlns='http://www.w3.org/2000/svg')
+                use(href='img/sprites/sprite.svg#twitter-logo')
+
+mixin footer-nav()
+  .footer-nav
+      .footer-nav__item
+          .footer-nav__list
+              a.footer-nav__link(href="#") Guides
+              a.footer-nav__link(href="#") Documentation
+              a.footer-nav__link(href="#") FAQ
+              a.footer-nav__link(href="#") video
+      .footer-nav__item
+          +social()
+
+mixin footer()
+  footer.footer
+    .container.flex-container
+        .footer__logo
+            svg(xmlns='http://www.w3.org/2000/svg', width='157', height='36', viewbox='0 0 157 36')
+                use(href='img/sprites/sprite.svg#logo-small')
+        p.text.invert All other company or product names mentioned are used only for identification purposes and may be trademarks or registered trademarks of their respective owners. <a href="#" class='link-in-text'>Privacy</a>
+        +footer-nav()
+        p.text.invert © Copyright DataSunrise, Inc 2020. All rights reserved.

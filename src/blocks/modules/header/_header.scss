@@ -1,0 +1,135 @@
+$buttonSignUpPadding: 30px;
+
+.header {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    background: $primaryColorDark;
+    color: #ffffff;
+
+    .row {
+        display: flex;
+        align-items: center;
+
+        @media (max-width: $bp992) {
+            justify-content: space-between;
+        }
+    }
+
+    .btn.btn-sm {
+        @include btn(#ffffff, $text-color, true, #E1E4E6, #CDD0D2);
+        padding: 10px $buttonSignUpPadding;
+        width: 111px;
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+    .main-nav__list > li > a,
+    .main-nav__list > li >.main-nav__item-inner > a {
+        color: #ffffff;
+    }
+
+    .search use {
+        fill: #ffffff;
+    }
+
+    &__logo {
+        use {
+            fill: #ffb400;
+            color: #0084f4;
+        }
+    }
+
+    &_deep-dark {
+        background-color: #162A39;
+    }
+
+    &_scroll {
+        box-shadow: 0 13px 30px rgba(7, 42, 68, 0.07);
+
+        @media (min-width: $bp992) {
+            .main-nav__list > li {
+                padding: 30px 0;
+            }
+
+            .main-nav__sub-list {
+                padding-top: 23px;
+                top: 55px;
+            }
+        }
+    }
+
+    &.main-nav-open {
+        @media (max-width: $bp992) {
+            .header__logo {
+                position: relative;
+                z-index: 9;
+            }
+        }
+
+        @media (max-width: $sm) {
+            background-color: #ffffff;
+        }
+    }
+
+    &_light,
+    &_main.header_scroll {
+        background-color: #ffffff;
+
+        @media (min-width: $bp992) {
+            .main-nav__list > li > a,
+            .main-nav__list > li >.main-nav__item-inner > a {
+                color: $text-color;
+            }
+
+            .main-nav__show-sub use {
+                stroke: $text-color;
+            }
+        }
+
+        @media (max-width: $sm) {
+            &.main-nav-open {
+                .main-nav__toggle-icon {
+                    background-color: #ffffff;
+                }
+            }
+        }
+
+        .btn.btn-sm {
+            @include btn($primaryColorBlue, #ffffff, true, #0478DB, #026AC2);
+        }
+
+        .search use {
+            fill: $primaryColorBlue;
+        }
+
+        .search input::placeholder {
+            color: $primaryColorDark;
+        }
+
+        .main-nav__toggle-icon {
+            background-color: $primaryColorDark;
+        }
+    }
+
+    &_main {
+        .btn.btn-sm {
+            @include btn($primaryColorBlue, #ffffff, true, #0478DB, #026AC2);
+        }
+    }
+
+    &_transparent {
+        background-color: transparent;
+    }
+
+    @media (max-width: $bp992) {
+        &__inner {
+            padding: 21px 0;
+        }
+    }
+}

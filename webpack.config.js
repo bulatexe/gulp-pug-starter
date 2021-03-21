@@ -3,6 +3,7 @@ const path = require("path");
 module.exports = {
     entry: {
         main: "./src/js/index.js",
+        auth: "./src/js/auth.js"
     },
 
     output: {

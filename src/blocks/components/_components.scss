@@ -1,0 +1,37 @@
+.btn-blue {
+  @include btn($primaryColorBlue, #ffffff, true, #0478DB, #026AC2);
+}
+
+.btn-orange {
+  @include btn($primaryColorYellow, #ffffff, false, #E5A200, #CC9001);
+}
+
+.btn-white {
+  @include btn(#ffffff, $text-color, true, #E1E4E6, #CDD0D2);
+}
+
+.label {
+  position: relative;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(18, 21, 30, 0.551998);
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 3px;
+  border: 1px solid #C1C7CE;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in;
+  outline: none;
+
+  &:focus {
+    outline: none;
+    border-color: $primaryColorBlue;
+  }
+}
+
+.input.password {
+  padding-right: 35px;
+}

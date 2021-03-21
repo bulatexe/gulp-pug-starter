@@ -5,7 +5,61 @@ block variables
 	- const title = "gulp-pug-starter"
 
 block content
-
+	+header()
+	main
+		.block-inner
+			.container
+				h1 DataSunrise Knowledge Base 
+				p.sub-heading.invert All the resources you need to get the most out of our product, quickly and effectively!
+		.container
+			+blockInnerItems(
+					[
+						{
+								title: '1. Use Our Resources',
+								description: 'Detailed guides for fast installation of DataSunrise Security Tools.',
+						},
+						{
+								title: '2. Explore the Guides',
+								description: 'Learn how to maximize the effectiveness of DataSunrise products.',
+						},
+						{
+								title: '3. Start Using DataSunrise',
+								description: 'Secure your databses in a few clicks.'
+						}
+					]
+			)
+		+supportedItems('<strong>Use These Sections to Explore</strong> DataSunrise Security & Compliance Tools',
+		[
+			{
+				link: 'faq.html',
+				title: 'FAQ',
+				type: 'blue'
+			},
+			{
+				link: 'guides.html',
+				title: 'Guides',
+				type: 'orange',
+			},
+			{
+				link: 'documentation.html',
+				title: 'Documentation',
+				type: 'green'
+			}
+		])
+		+contentItems('Video', [
+			{
+				img: 'img/placeholder.jpg'
+			},
+			{
+				img: 'img/placeholder.jpg'
+			},
+			{
+				img: 'img/placeholder.jpg'
+			},
+		])
+		+contactUsPromo()
+	+footer()
+	
 block scripts
 	script(src="../js/main.js")
 	script(src="../js/vendor.js")

@@ -1,0 +1,29 @@
+.contents {
+  margin-top: 77px;
+  h2 {
+    margin-right: 15px;
+  }
+
+  .flex-row {
+    align-items: center;
+    margin-bottom: 36px;
+  }
+
+  .row {
+    @include row-flex();
+  }
+
+  &__item {
+    display: block;
+    @include col();
+    @include size(4);
+    @include size-bp767(6);
+    @include size-sm(12);
+    height: 231px;
+
+    @media (max-width: $bp767) {
+      margin-bottom: 30px;
+    }
+
+  }
+}

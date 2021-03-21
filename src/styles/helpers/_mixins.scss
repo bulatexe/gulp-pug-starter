@@ -1,0 +1,52 @@
+@mixin btn($bg, $text-color, $isLink, $hover-color, $active-color) {
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 19px;
+  border: none;
+  padding: 16px 30px;
+  color: $text-color;
+  background-color: $bg;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+
+  &:hover {
+      background-color: $hover-color;
+  }
+  &:active {
+      background-color: $active-color;
+  }
+}
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+
+  $extmods: (
+      eot: "?",
+      svg: "#" + str-replace($name, " ", "_")
+  );
+
+  $formats: (
+      otf: "opentype",
+      ttf: "truetype"
+  );
+
+  @each $ext in $exts {
+      $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+      $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+      $src: append($src, url(quote("../" + $path + "." + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+      font-family: quote($name);
+      font-style: $style;
+      font-weight: $weight;
+      src: $src;
+      font-display: swap;
+  }
+}
