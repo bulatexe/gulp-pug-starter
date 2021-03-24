@@ -35,3 +35,12 @@
 .input.password {
   padding-right: 35px;
 }
+
+.question-group {
+  border-bottom: 1px solid #e1e4e6;
+  padding: 20px 0;
+
+  &:last-child {
+      border-bottom: none;
+  }
+}

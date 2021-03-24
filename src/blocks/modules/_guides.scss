@@ -1,0 +1,49 @@
+.guides {
+    .row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 107px;
+        margin-bottom: 74px;
+
+        @media(max-width: $xl) {
+            display: block;
+        }
+    }
+
+    h3 {
+        font-size: 24px;
+        line-height: 28px;
+        font-family: "Lato", "Arial", sans-serif;
+        font-weight: 400;
+        max-width: 500px;
+    }
+
+    &__search {
+        margin-left: 23px;
+        flex: 1;
+
+        @media(max-width: $xl) {
+            margin-top: 23px;
+            margin-left: 0;
+        }
+    }
+}
+
+
+.guide-tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.guide-tag {
+    margin-right: 12px;
+    margin-bottom: 9px;
+    text-decoration: none;
+    padding: 5px 17px;
+    font-size: 11px;
+    line-height: 13px;
+    background-color: #FFE8DA;
+    color: #FFA26B;
+    border-radius: 133px;
+}

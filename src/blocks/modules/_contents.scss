@@ -19,11 +19,16 @@
     @include size(4);
     @include size-bp767(6);
     @include size-sm(12);
-    height: 231px;
+    margin-bottom: 38px;
 
     @media (max-width: $bp767) {
       margin-bottom: 30px;
     }
 
+  }
+
+  &__image {
+    width: 100%;
+    height: 231px;
   }
 }

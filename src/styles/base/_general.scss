@@ -54,6 +54,42 @@ h3 {
     }
 }
 
+a {
+    color: $primaryColorBlue;
+}
+
+.hide {
+    display: none;
+}
+
+.hover-underline {
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 4px;
+        background-color: $primaryColorBlue;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        transition: width 0.3s ease-in-out;
+    }
+
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: $bp767) {
+        &::after {
+            content: none;
+        }
+    }
+}
+
 .sub-heading {
     @media (max-width: $bp767) {
         font-size: 16px;

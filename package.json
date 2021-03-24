@@ -56,6 +56,7 @@
         "imagemin-pngquant": "~8.0.0",
         "imagemin-webp": "^5.0.0",
         "imagemin-zopfli": "^6.0.0",
+        "mark.js": "^8.11.1",
         "require-dir": "^1.2.0",
         "stylelint": "^10.0.1",
         "stylelint-order": "^3.0.0",
@@ -65,6 +66,7 @@
         "yargs": "~13.2.4"
     },
     "dependencies": {
+        "micromodal": "^0.4.6",
         "smart-grid": "^2.1.2"
     }
 }

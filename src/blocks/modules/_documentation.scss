@@ -1,0 +1,56 @@
+.documentation {
+    margin-top: 95px;
+    .row {
+        @include row-flex();
+    }
+    &__item {
+        @include col();
+        @include size(4);
+        @include size-bp992(6);
+        @include size-bp767(12);
+        border: 1px solid #E1E4E6;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__inner {
+        padding: 26px;
+
+        h3 {
+            font-size: 21px;
+            line-height: 28px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+
+    &__under {
+        padding: 18px 26px;
+        border-top: 1px solid #e1e4e6;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        color: $primaryColorBlue;
+        text-decoration: none;
+        text-transform: uppercase;
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 23px;
+            height: 23px;
+            background-image: url("../img/svg/certificate.svg");
+            background-size: auto;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-right: 15px;
+        }
+    }
+
+}

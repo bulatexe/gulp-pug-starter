@@ -3,6 +3,7 @@
 (function () {
     const onScrollTrigger = 50;
     let header = document.querySelector(".header");
+    let stickyElements = ['.tab__list.sticky', '.event-detail__next', '.threat-detail__next', '.compliance-detail__next'];
     let getCurrentScroll = () => window.pageYOffset || document.documentElement.scrollTop;
 
     let handleScrollHeader = function () {
@@ -19,6 +20,17 @@
     };
 
     handleScrollHeader();
+
+    function addStickyElement(element) {
+        if (document.querySelector(element) !== null) {
+            let elementNode = document.querySelector(element);
+            elementNode.style.top = `${header.offsetHeight - 15}px`;
+        }
+    }
+
+    stickyElements.forEach(element => {
+        addStickyElement(element);
+    });
 
     window.addEventListener("scroll", handleScrollHeader);
 

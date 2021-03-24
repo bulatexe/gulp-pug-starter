@@ -1,0 +1,51 @@
+.guide-preview {
+    background-color: #ffffff;
+    border: 1px solid #E1E4E6;
+    margin-bottom: 38px;
+    transition: drop-shadow 0.3s ease-in-out;
+    z-index: 1;
+
+    &__link {
+        display: block;
+        padding: 25px 25px 10px 25px;
+        text-decoration: none;
+
+        h3 {
+            text-decoration: underline;
+            margin-bottom: 26px;
+        }
+
+        h3,
+        p {
+            color: $text-color;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+
+    &__under {
+        padding: 18px 25px 18px 25px;
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #E1E4E6;
+
+        @media (max-width: $sm) {
+            display: block;
+
+            .guide-tags {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .text-link {
+        min-width: 110px;
+    }
+
+    &:hover {
+        filter: drop-shadow(0px 10px 50px rgba(7, 42, 68, 0.07));
+    }
+}

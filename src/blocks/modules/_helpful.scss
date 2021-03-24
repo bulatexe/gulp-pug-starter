@@ -1,0 +1,102 @@
+.helpful {
+    margin-top: 48px;
+    padding-top: 50px;
+    padding-right: 15px;
+    border-top: 1px solid #E1E4E6;
+
+
+    &__inner {
+        display: flex;
+        align-items: center;
+    }
+
+    h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-right: 30px;
+        font-size: 24px;
+    }
+
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+        margin-right: 30px;
+        padding: 10px 17px;
+        background-color: transparent;
+        border-color: $primaryColorDark;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        use {
+            fill: #304250;
+        }
+
+        span {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__btn.active {
+        background-color: $primaryColorDark;
+
+        use {
+            fill: #ffffff;
+        }
+
+        color: #ffffff;
+    }
+
+    .state-block {
+        max-width: 550px;
+        margin-right: 15px;
+        p {
+            font-size: 18px;
+            line-height: 28px;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+    }
+
+    .btn {
+        margin-top: 35px;
+        @include btn($primaryColorBlue, #ffffff, true, #0478DB, #026AC2);
+    }
+
+    @media (max-width: $lg) {
+        display: block;
+        text-align: center;
+    }
+
+    @media (max-width: $bp767) {
+        padding-right: 0;
+
+        .helpful__inner {
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: $sm) {
+        h3 {
+            margin-bottom: 23px;
+            margin-right: 0;
+        }
+
+        .state-block {
+            margin-right: 0;
+            p {
+                margin-bottom: 23px;
+            }
+        }
+
+        .helpful__inner {
+            display: block;
+        }
+    }
+}

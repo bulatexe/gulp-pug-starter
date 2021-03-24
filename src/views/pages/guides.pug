@@ -1,0 +1,140 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+    - const title = "Guides";
+
+block content
+    +header()
+    main
+        +blockInner('page block-inner_guides', 'Guides',
+            [
+                {
+                    name: 'Home',
+                    link: 'index.html'
+                },
+                {
+                    name: 'Support',
+                    link: '#'
+                }
+            ],
+            'Guides',
+            'This section contains detailed guides on how you can mask your data, set up your database auditing and make your data and database secure.'
+        )
+        section.guides
+            .container
+                .row
+                    h3.guides__title Use the guides to maximize the effectiveness of DataSunrise products
+                    .guides__search
+                        +searchBlock()
+                .tab.tab_search
+                    .col-left
+                        .tab__list
+                            .tab__item.tab__item_active Static & Dynamic Data Masking
+                            .tab__item Security Rules & Guides
+                            .tab__item How to…
+                            .tab__item DataSunrise Installation
+                    .col-right
+                        .tab__content-list
+                            .tab__content-item.tab__content-item_active
+                                .guide-preview.hover-underline
+                                    a(href="#").guide-preview__link
+                                        .guide-preview__inner
+                                            h3 Static Data Masking1
+                                            p Learn how to protect sensitive data from any kind of inside and outside threats with DataSunrise Static Data Masking.
+                                    .guide-preview__under
+                                        .guide-tags
+                                            a(href='#').guide-tag Database Protection
+                                            a(href='#').guide-tag Data Audit
+                                            a(href='#').guide-tag Database Security
+                                        a.text-link Learn More
+                                .guide-preview.hover-underline
+                                    a(href="#").guide-preview__link
+                                        .guide-preview__inner
+                                            h3 Static Data Masking2
+                                            p Learn how to protect sensitive data from any kind of inside and outside threats with DataSunrise Static Data Masking.
+                                    .guide-preview__under
+                                        .guide-tags
+                                            a(href='#').guide-tag Database Protection
+                                            a(href='#').guide-tag Data Audit
+                                            a(href='#').guide-tag Database Security
+                                        a.text-link Learn More
+                                .guide-preview.hover-underline
+                                    a(href="#").guide-preview__link
+                                        .guide-preview__inner
+                                            h3 Static Data Masking3
+                                            p Learn how to protect sensitive data from any kind of inside and outside threats with DataSunrise Static Data Masking.
+                                    .guide-preview__under
+                                        .guide-tags
+                                            a(href='#').guide-tag Database Protection
+                                            a(href='#').guide-tag Data Audit
+                                            a(href='#').guide-tag Database Security
+                                        a.text-link Learn More
+                                .guide-preview.hover-underline
+                                    a(href="#").guide-preview__link
+                                        .guide-preview__inner
+                                            h3 Static Data Masking
+                                            p Learn how to protect sensitive data from any kind of inside and outside threats with DataSunrise Static Data Masking.
+                                    .guide-preview__under
+                                        .guide-tags
+                                            a(href='#').guide-tag Database Protection
+                                            a(href='#').guide-tag Data Audit
+                                            a(href='#').guide-tag Database Security
+                                        a.text-link Learn More
+                            .tab__content-item
+                                .guide-preview.hover-underline
+                                    a(href="#").guide-preview__link
+                                        .guide-preview__inner
+                                            h3 Learning Rules and Audit
+                                            p Learn about sets of audit, security and masking rules of database protection from DataSunrise.
+                                    .guide-preview__under
+                                        .guide-tags
+                                            a(href='#').guide-tag Database Protection
+                                            a(href='#').guide-tag Data Audit
+                                            a(href='#').guide-tag Database Security
+                                        a.text-link Learn More
+                                .guide-preview.hover-underline
+                                    a(href="#").guide-preview__link
+                                        .guide-preview__inner
+                                            h3 Static Data Masking4
+                                            p Learn how to protect sensitive data from any kind of inside and outside threats with DataSunrise Static Data Masking.
+                                    .guide-preview__under
+                                        .guide-tags
+                                            a(href='#').guide-tag Database Protection
+                                            a(href='#').guide-tag Data Audit
+                                            a(href='#').guide-tag Database Security
+                                        a.text-link Learn More
+                            .tab__content-item
+                                .guide-preview.hover-underline
+                                    a(href="#").guide-preview__link
+                                        .guide-preview__inner
+                                            h3 Static Data Masking5
+                                            p Learn how to protect sensitive data from any kind of inside and outside threats with DataSunrise Static Data Masking.
+                                    .guide-preview__under
+                                        .guide-tags
+                                            a(href='#').guide-tag Database Protection
+                                            a(href='#').guide-tag Data Audit
+                                            a(href='#').guide-tag Database Security
+                                        a.text-link Learn More
+                            .tab__content-item
+                                .guide-preview.hover-underline
+                                    a(href="#").guide-preview__link
+                                        .guide-preview__inner
+                                            h3 Static Data Masking6
+                                            p Learn how to protect sensitive data from any kind of inside and outside threats with DataSunrise Static Data Masking.
+                                    .guide-preview__under
+                                        .guide-tags
+                                            a(href='#').guide-tag Database Protection
+                                            a(href='#').guide-tag Data Audit
+                                            a(href='#').guide-tag Database Security
+                                        a.text-link Learn More
+        +contactUsPromo()
+    +footer()
+
+
+
+block scripts
+    script(src="js/main.js")
+    script(src="js/guidesSearch.js")
+    script(src="js/tabs.js")
+    script(src="js/vendor.js")

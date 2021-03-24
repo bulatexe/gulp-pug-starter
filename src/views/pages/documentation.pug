@@ -1,0 +1,83 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+    - const title = "Documentation";
+
+block content
+    +header()
+    main
+        +blockInner('page block-inner_doc', 'Documentation',
+            [
+                {
+                    name: 'Home',
+                    link: 'index.html'
+                },
+                {
+                    name: 'Support',
+                    link: 'support.html'
+                }
+            ],
+            'Documentation',
+            'This section contains detailed guides on how you can mask your data, set up your database auditing and make your data and database secure.'
+        )
+        section.documentation
+            .container
+                .row
+                    +documentationItems([
+                        {
+                            title: 'DataSunrise Administration Guide for Linux',
+                            description: 'This administration guide contains instructions on how to deploy and install DataSunrise solutions in the Linux environment.',
+                            link: '#',
+                            titleLink: 'ADMIN GUIDE FOR LINUX'
+                        },
+                        {
+                            title: 'DataSunrise Administration Guide for Windows',
+                            description: 'This administration guide contains instructions on how to deploy and install DataSunrise solutions in the Windows environment.',
+                            link: '#',
+                            titleLink: 'ADMIN GUIDE FOR WINDOWS'
+                        },
+                        {
+                            title: 'DataSunrise Database Security User Guide',
+                            description: 'This detailed user guide provides you how to effectively apply DataSunrise solutions and security policies.',
+                            link: '#',
+                            titleLink: 'DATASUNRISE USER GUIDE'
+                        },
+                        {
+                            title: 'DataSunrise Database Security User Guide',
+                            description: 'This detailed user guide provides you how to effectively apply DataSunrise solutions and security policies.',
+                            link: '#',
+                            titleLink: 'DATASUNRISE USER GUIDE'
+                        },
+                        {
+                            title: 'DataSunrise Security Best Practices',
+                            description: 'A detailed instruction manual of DataSunrise best practices that will help you to create the most effective data security configuration.',
+                            link: '#',
+                            titleLink: 'INSTRUCTION MANUAL'
+                        },
+                        {
+                            title: 'DataSunrise AWS Security Best Practices',
+                            description: 'A detailed instuction manual that will help you to protect Amazon RDS databases with DataSunrise Security..',
+                            link: '#',
+                            titleLink: 'INSTRUCTION MANUAL'
+                        },
+                        {
+                            title: 'DataSunrise Database and Data Security and Compliance',
+                            description: 'A detailed description of the features of DataSunrise Security solutions, which allows you to understand more about our products.',
+                            link: '#',
+                            titleLink: 'WHITE PAPER'
+                        },
+                        {
+                            title: 'DataSunrise Security',
+                            description: 'A detailed description to understand what kind of perfomance and features are supported by DataSunrise Security.',
+                            link: '#',
+                            titleLink: 'DATASUNRISE DATASHEET'
+                        }
+                    ])
+        +contactUsPromo()
+    +footer()
+
+
+block scripts
+    script(src="js/main.js")
+    script(src="js/vendor.js")

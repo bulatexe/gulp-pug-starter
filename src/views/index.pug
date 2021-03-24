@@ -48,18 +48,26 @@ block content
 		])
 		+contentItems('Video', [
 			{
-				img: 'img/placeholder.jpg'
+				img: 'img/placeholder.jpg',
+				videoSrc: 'https://www.youtube.com/embed/Bbv_jKN5XWw',
+				modalId: 'modal-1'
 			},
 			{
-				img: 'img/placeholder.jpg'
+				img: 'img/placeholder.jpg',
+				videoSrc: 'https://www.youtube-nocookie.com/embed/PaIAKCuz_y4?rel=0',
+				modalId: 'modal-1'
 			},
 			{
-				img: 'img/placeholder.jpg'
+				img: 'img/placeholder.jpg',
+				videoSrc: 'https://www.youtube-nocookie.com/embed/PaIAKCuz_y4?rel=0',
+				modalId: 'modal-1'
 			},
 		])
 		+contactUsPromo()
+		+modal('modal-1', '', '<iframe frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', 'video')
 	+footer()
 	
 block scripts
-	script(src="../js/main.js")
-	script(src="../js/vendor.js")
+	script(src="js/main.js")
+	script(src="js/modal.js")
+	script(src="js/vendor.js")

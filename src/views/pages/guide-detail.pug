@@ -1,0 +1,82 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+    - const title = "Static & Dynamic Data Masking";
+
+block content
+    +header()
+    main.without-overflow
+        +blockInner('page block-inner_guides-detail', 'Static & Dynamic Data Masking',
+            [
+                {
+                    name: 'Home',
+                    link: 'index.html'
+                },
+                {
+                    name: 'Support',
+                    link: '#'
+                }
+            ],
+            'Guides'
+        )
+        section.guide-detail
+            .container
+                .tab.tab_search
+                    .col-left
+                        .tab__list.sticky
+                            a(href='#').tab__item.tab__item_active.link Static Data Masking
+                            a(href='#').tab__item.link Dynamic Data Masking
+                            a(href='#').tab__item.link Basic Principles of Dynamic Masking
+                            a(href='#').tab__item.link In-Place Masking
+                    .col-right
+                        .tab__content-list
+                            .tab__content-item.tab__content-item_active
+                                .guide-detail__header
+                                    h3 Static Data Masking
+                                    .guide-tags
+                                        a(href='#').guide-tag Database Protection
+                                        a(href='#').guide-tag Data Audit
+                                        a(href='#').guide-tag Database Security
+                                .guide-detail__text
+                                    p Static Data Masking tool is a constituent part of the DataSunrise Database Security Suite. It is a special database protection mechanism aimed at protecting sensitive data from any kind of inside and outside threats. All customer sensitive data is obfuscated thus making it useless for malicious actors. This database protection tool can be also useful when a company needs to provide legitimate access to its databases for third-party organizations. Here are some examples when Static Data Masking can be helpful.
+                                    ul
+                                        li A company hires an IT company to make some changes in their IT infrastructure or perform database testing or upgrade;
+                                        li A healthcare company wants to provide access to its data for medical research;
+                                        li A retail company needs to share information with market researchers to boost sales.
+                                    p As a result of using Static Data Masking, a company disclosing information can be sure that it’s revealing only the information that it really wants to reveal and keeps other information hidden.
+                                    p DataSunrise Database Security Suite includes two types of Data Masking: Static and Dynamic. Static Data Masking has the following advantages and disadvantages:
+                                    h3 Advantages of Static Data Masking
+                                    ul
+                                        li Sensitive data in databases is transformed using special algorithms and if the attacker gets access to statically masked data, the sensitive data simply isn’t there;
+                                        li After Static Data Masking has been done it has no impact on databases used for various business processes;
+                                        li Easy to perform, yet highly efficient. No need to implement object-level security.
+                                    h3 Disadvantages of Statiс Masking
+                                    ul
+                                        li Depending on the volume of data the process of a Database Static Masking may take some time;
+                                        li Cannot be used to protect the production database due to permanent change of the underlying data.
+                                    p With DataSunrise you can perform Static Data Masking in a few clicks:
+                                    p In the web UI go to Masking → Static Masking. After that, click Add Task.
+                                    p After that, specify the source and target instances, databases and schemas.
+                                    p After that, specify the tables to transfer and columns to mask and select a masking method to do that. Then click Start Transfer to mask your database statically.
+                                .helpful
+                                    .helpful__inner
+                                        div.state-block
+                                            h3 Did this guide help you?
+                                        button.helpful__btn.btn-yes
+                                            span Yes
+                                            svg(width="15" height="14" viewBox="0 0 15 14" xmlns="http://www.w3.org/2000/svg")
+                                                use(href='img/sprites/sprite.svg#thumb-up')
+                                        button.helpful__btn.btn-no
+                                            span No
+                                            svg(width="15" height="14" viewBox="0 0 15 14" xmlns="http://www.w3.org/2000/svg")
+                                                use(href='img/sprites/sprite.svg#thumb-down')
+                                    a.btn.btn-lg Contact-Us
+    +footer()
+
+
+
+block scripts
+    script(src="js/main.js")
+    script(src="js/helpful.js")
+    script(src="js/vendor.js")

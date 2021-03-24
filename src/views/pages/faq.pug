@@ -1,0 +1,103 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+    - const title = "FAQ";
+
+block content
+    +header()
+    main
+        +blockInner('page block-inner_faq', 'Frequently Asked Questions',
+            [
+                {
+                    name: 'Home',
+                    link: 'index.html'
+                },
+                {
+                    name: 'Support',
+                    link: '#'
+                }
+            ],
+            'Frequently Asked Questions'
+        )
+        section.faq
+            .container
+                .row
+                    h3.faq__title Get Answers to the Most FAQ
+                    .faq__search
+                        +searchBlock()
+                .tab.tab_search
+                    .col-left
+                        .tab__list
+                            .tab__item.tab__item_active Installation
+                            .tab__item Instance Creation And Using
+                            .tab__item Sniffer Mode
+                            .tab__item Rules
+                            .tab__item Common
+                    .col-right
+                        .tab__content-list
+                            .tab__content-item.tab__content-item_active
+                                .question-group
+                                    +question(
+                                        'What are the system requirements for DataSunrise Database Security Suite?',
+                                        '<p>DataSunrise can run on any commodity hardware. No special hardware requirements. If DataSunrise to be used in production, we suggest something like below:</p>' +
+                                        '<ul>' +
+                                            '<li>CPU 8 cores</li>' +
+                                            '<li>RAM 8-16GB is sufficient</li>' +
+                                            '<li>No special storage requirements</li>' +
+                                            '<li>100 GB data audit</li>' +
+                                            '<li>Linux of Windows Server OS</li>' +
+                                        '</ul>'
+                                    )
+                                .question-group
+                                    +question(
+                                        'I’m trying to run DataSunrise on Linux but getting an error message: “Data source name not found and no default driver specified”',
+                                        '<p>Run the following commands:</p>' +
+                                        '<code>cd /usr/lib/x86_64-linux-gnu/ >cd ln -s libodbc.so.1.0.0 libodbc.so.2</code>'
+                                    )
+                                .question-group
+                                    +question(
+                                        'I am getting “Could not find libodbc.so.2 (unixODBC is requried)” error while trying to install DataSunrise on Ubuntu 14.04. UnixODBC is installed.',
+                                        '<p>LoL, we are sorry for you</p>'
+                                    )
+                                .question-group
+                                    +question(
+                                        'I am getting a “Could not find “setcap”” error while trying to install DataSunrise on OpenSUSE 42.1.',
+                                        '<p>LoL, we are sorry for you</p>'
+                                    )
+                            .tab__content-item
+                                .question-group
+                                    +question(
+                                        'I’m trying to run DataSunrise on Linux but getting an error message: “Data source name not found and no default driver specified”',
+                                        '<p>Run the following commands:</p>' +
+                                        '<code>cd /usr/lib/x86_64-linux-gnu/ >cd ln -s libodbc.so.1.0.0 libodbc.so.2</code>'
+                                    )
+                            .tab__content-item
+                                .question-group
+                                    +question(
+                                        '1I am getting “Could not find libodbc.so.2 (unixODBC is requried)” error while trying to install DataSunrise on Ubuntu 14.04. UnixODBC is installed.',
+                                        '<p>LoL, we are sorry for you</p>'
+                                    )
+                            .tab__content-item
+                                .question-group
+                                    +question(
+                                        '2I am getting a “Could not find “setcap”” error while trying to install DataSunrise on OpenSUSE 42.1.',
+                                        '<p>LoL, we are sorry for you</p>'
+                                    )
+                            .tab__content-item
+                                .question-group
+                                    +question(
+                                        '3I am getting a “Could not find “setcap”” error while trying to install DataSunrise on OpenSUSE 42.1.',
+                                        '<p>LoL, we are sorry for you</p>'
+                                    )
+        +contactUsPromo()
+    +footer()
+
+
+
+block scripts
+    script(src="js/main.js")
+    script(src='js/tabs.js')
+    script(src='js/questions.js')
+    script(src='js/faqSearch.js')
+    script(src="js/vendor.js")

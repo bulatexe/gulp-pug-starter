@@ -4,7 +4,7 @@
   font-size: 16px;
   line-height: 19px;
   border: none;
-  padding: 16px 30px;
+  padding: 10px 30px;
   color: $text-color;
   background-color: $bg;
   border-radius: 3px;
@@ -49,4 +49,22 @@
       src: $src;
       font-display: swap;
   }
+}
+
+@mixin visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; /* added line */
+}
+
+@mixin reset-visually-hidden {
+    position: static !important;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
 }

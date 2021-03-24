@@ -29,6 +29,45 @@ mixin header(classes)
                         include ../../blocks/modules/main-nav/main-nav
 
 
+mixin breadcrumbs(items, last)
+    - items = items || []
+    .breadcrumbs
+        ul.breadcrumbs__list
+            each item in items
+                li.breadcrumbs__item
+                    if (items.length === 1)
+                        span.breadcrumbs__link= item.name
+                    else
+                        a(href= item.link).breadcrumbs__link= item.name
+            if last
+                li.breadcrumbs__item
+                    span.breadcrumbs__link-current= last
+
+mixin blockInner(type, title, breadcrumbs, last, description, image)
+    - breadcrumbs = breadcrumbs || ''
+    - description = description || ''
+    - type = type || ''
+    - image = image || ''
+    section.block-inner(class = 'block-inner_' + type, style=image)
+        .container
+            if breadcrumbs !== ''
+                +breadcrumbs(breadcrumbs, last)
+            h2= title
+            if description
+                p!= description
+
+
+mixin searchBlock()
+    .search-block
+        form.search-block__form
+            input.search-block__input(placeholder='Search')
+            button.search-block__remove-btn(type='button')
+                svg(width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg")
+                    use(href='img/sprites/sprite.svg#close')
+            button.search-block__btn(type='submit')
+                svg(width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg")
+                    use(href='img/sprites/sprite.svg#search-icon')
+
 mixin blockInnerItems(items)
     .block-inner-items
         .row
@@ -54,21 +93,26 @@ mixin supportedItems(title, items)
 
 
 mixin contentItems(title, items)
+  - title  = title || ''
   .contents
     .container
-      .flex-row 
-        h2!= title
-        a.text-link(href="#") See All
+      if title !== ''
+        .flex-row 
+          h2!= title
+          a.text-link(href="#") See All
       .row
         each item in items
-          a.contents__item(style=`background-image: url(${item.img})` href="#")
+          .contents__item(data-micromodal-trigger=item.modalId data-src=item.videoSrc)
+            .contents__image(style=`background-image: url(${item.img})` href="#")
+            if item.description
+              p= item.description
 
 mixin contactUsPromo()
     .container
         .contact-us-promo
             h2.invert Want to Know More?
             p.sub-heading.invert Our experts will be glad to answer your questions.
-            .btn.btn-lg Contact Us
+            .btn.btn-lg Support Center
 
 mixin social()
   .social
@@ -83,6 +127,18 @@ mixin social()
             svg(width='16', height='14', viewbox='0 0 16 14', fill='none', xmlns='http://www.w3.org/2000/svg')
                 use(href='img/sprites/sprite.svg#twitter-logo')
 
+
+mixin modal(modalId, modalTitle, modalContent, modalVideo)
+    - modalVideo = modalVideo || ''
+    div(class="modal micromodal-slide " + modalVideo aria-hidden='true' id= modalId)
+        .modal__overlay(tabindex='-1', data-micromodal-close='')
+            .modal__container(role='dialog', aria-modal='true', aria-labelledby=modalId + '-title')
+                header.modal__header
+                    h2.modal__title(id=modalId + '-title')= modalTitle
+                    button.modal__close(aria-label='Close modal', data-micromodal-close='')
+                main.modal__content(id=modalId + '-content')
+                    div!= modalContent
+
 mixin footer-nav()
   .footer-nav
       .footer-nav__item
@@ -93,6 +149,26 @@ mixin footer-nav()
               a.footer-nav__link(href="#") video
       .footer-nav__item
           +social()
+
+
+mixin question(question, answer)
+    .question
+        h3= question
+        button.question__more-icon
+            svg(width="18" height="10" viewBox="0 0 18 10" xmlns="http://www.w3.org/2000/svg")
+                use(href='img/sprites/sprite.svg#more-icon')
+    .transition-container
+        .answer
+            div!= answer
+
+mixin documentationItems(items)
+    each item in items
+        .documentation__item.hover-underline
+            .documentation__inner
+                h3= item.title
+                p= item.description
+            .documentation__under
+                a.documentation__link(href= item.link)= item.titleLink
 
 mixin footer()
   footer.footer

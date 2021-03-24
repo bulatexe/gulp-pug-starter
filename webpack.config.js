@@ -3,7 +3,15 @@ const path = require("path");
 module.exports = {
     entry: {
         main: "./src/js/index.js",
-        auth: "./src/js/auth.js"
+        search: "./src/js/components/search.js",
+        tabs: './src/js/components/tabs.js', 
+        auth: "./src/js/pages/auth.js",
+        helpful: "./src/js/pages/helpful.js",
+        faqSearch: "./src/js/pages/faqSearch.js",
+        guidesSearch: "./src/js/pages/guidesSearch.js",
+        questions: './src/js/pages/questions.js',
+        activateQuestions: './src/js/components/activateQuestions.js',
+        modal: './src/js/components/modal.js'
     },
 
     output: {

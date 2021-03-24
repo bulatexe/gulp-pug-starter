@@ -1,0 +1,175 @@
+.tab {
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+        cursor: pointer;
+
+        &.disabled {
+            pointer-events: none;
+            opacity: 0.2;
+        }
+    }
+
+    &__content-list {
+        list-style: none;
+    }
+
+    &__content-item {
+        @include visually-hidden();
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+
+        &_active {
+            @include reset-visually-hidden();
+            opacity: 1;
+        }
+    }
+}
+
+.tab {
+    &_search {
+        @include row-flex();
+
+        .col-left,
+        .col-right {
+            @include col();
+            @include size-bp767(12);
+        }
+
+        .col-left {
+            @include size(4);
+
+            @media (max-width: $bp767) {
+                position: relative;
+                margin-bottom: 40px;
+
+                &::after,
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    width: 50px;
+                    height: 100%;
+                    z-index: 2;
+                }
+                &::after {
+                    pointer-events: none;
+                    right: 0;
+                    background: linear-gradient(270deg, #F7F7F7 24.51%, rgba(255, 255, 255, 0) 100%);
+                }
+                &::before {
+                    pointer-events: none;
+                    left: 0;
+                    background: linear-gradient(115deg, #F7F7F7 24.51%, rgba(255, 255, 255, 0) 100%);
+                }
+            }
+        }
+        .col-right {
+            @include size(8);
+        }
+
+        .tab__list {
+            max-width: 310px;
+            
+            @media (max-width: $lg) {
+                max-width: 250px;
+            }
+
+            @media (max-width: $bp767) {
+                position: relative;
+                max-width: none;
+                overflow-x: auto;
+                display: flex;
+                width: 100%;
+            }
+        }
+
+        .tab__item {
+            position: relative;
+            padding: 24px 40px;
+            background-color: #f7f7f7;
+            z-index: 1;
+            color: $primaryColorDark;
+            &:first-child {
+                border-top-right-radius: 3px;
+                border-top-left-radius: 3px;
+            }
+            &:last-child {
+                border-bottom-right-radius: 3px;
+                border-bottom-left-radius: 3px;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 100%;
+                background-color: #ffffff;
+                border-radius: 3px;
+                transition: width 0.3s ease-in-out;
+                z-index: -1;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: -2%;
+                width: 4px;
+                height: 0;
+                background-color: #0084F4;
+                transition: all 0.3s ease-in-out;
+                border-top-right-radius: 3px;
+                border-bottom-right-radius: 3px;
+            }
+            &_active {
+                color: $primaryColorBlue;
+                font-weight: 700;
+
+                &::before {
+                    height: 100%;
+                }
+
+                &::after {
+                    width: 100%;
+                }
+            }
+            
+            @media (max-width: $lg) {
+                padding: 20px;
+            }
+
+            @media (max-width: $bp767) {
+                flex: 1;
+                white-space: nowrap;
+
+                &::before {
+                    width: 0;
+                    height: 4px;
+                    top: auto;
+                    right: auto;
+                    bottom: 0;
+                    left: 0;
+                    border-bottom-left-radius: 30px;
+                    border-bottom-right-radius: 30px;
+                    transition: width 0.3s ease-in-out;
+                }
+
+                &_active {
+                    z-index: 3;
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tab__item.link {
+    display: block;
+    text-decoration: none;
+}

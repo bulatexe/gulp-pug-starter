@@ -1,0 +1,33 @@
+.faq {
+    padding-top: 103px;
+    .row {
+        @include row-flex();
+        align-items: center;
+    }
+
+    &__title {
+        @include col();
+        @include size(4);
+        @include size-bp767(12);
+    }
+
+    &__search {
+        @include col();
+        @include size(8);
+        @include size-bp767(12);
+    }
+
+    .tab.tab_search {
+        padding-top: 63px;
+    }
+
+    @media (max-width: $bp767) {
+        &__title {
+            margin-bottom: 47px;
+        }
+
+        .tab.tab_search {
+            padding-top: 47px;
+        }
+    }
+}

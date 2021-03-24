@@ -28,6 +28,7 @@
     .btn.btn-lg {
         @include btn(#ffffff, $text-color, true, $primaryColorGray,  #CDD0D2);
         font-weight: 700;
+        padding: 16px 30px;
     }
 
     @media (max-width: $md) {
