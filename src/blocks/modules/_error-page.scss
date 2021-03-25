@@ -1,0 +1,62 @@
+.error-page {
+  &__inner {
+    text-align: center;
+    padding-top: 300px;
+    background-color: #162A39;
+
+    @media (max-width: $lg) {
+      padding-top: 200px;
+    }
+
+    h1 {
+      color: #ffffff;
+      font-size: 288px;
+      line-height: 95px;
+      font-family: 'Montserrat', "Arial", sans-serif;
+
+      @media (max-width: $bp767) {
+        font-size: 140px;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 100px;
+    text-align: center;
+    p {
+      margin-bottom: 60px;
+      font-size: 21px;
+      line-height: 29px;
+    }
+
+    .btn {
+      @include btn($primaryColorBlue, #ffffff, true, #0478DB, #026AC2);
+    }
+  }
+
+  &__contact {
+    position: relative;
+    max-width: 1274px;
+    margin: 100px  auto 0 auto;
+    background-color: #ffffff;
+    z-index: 3;
+    padding: 64px 15px;
+
+    @media (max-width: $lg) {
+      margin-top: 80px;
+    }
+
+    p  {
+      max-width: 638px;
+      text-align: center;
+      margin: 0 auto;
+      font-size: 16px;
+      line-height: 24px;
+
+      a {
+        color: $primaryColorBlue;
+      }
+    }
+  }
+
+}

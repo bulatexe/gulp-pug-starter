@@ -1,0 +1,24 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+    - const title = "downloads";
+
+block content
+    main
+        .error-page
+            .error-page__inner
+                .container
+                    .error-page__code-status
+                        h1 404
+            .container
+                .error-page__text
+                    p The page or file you are looking for has been moved or no longer exists.<br> Please check the URL to make sure there are no misspellings and try again.
+                    a.btn Home Page
+                .error-page__contact
+                    p If you believe this message to be an error, please contact <a href="#">support_center@datasunrise.com</a> so we can address the problem. Be sure to include the URL.
+
+
+block scripts
+    script(src="js/main.js")
+    script(src="js/vendor.js")
