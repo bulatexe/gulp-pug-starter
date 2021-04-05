@@ -14,6 +14,9 @@ import MicroModal from 'micromodal'
     MicroModal.init({
         onShow: function (modal) {
             modal.querySelector('iframe').src = iframeSrc
+        },
+        onClose: function(modal) {
+            modal.querySelector('iframe').src = ''
         }
     })
 })()
